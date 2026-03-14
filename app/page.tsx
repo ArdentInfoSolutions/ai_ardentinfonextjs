@@ -1,5 +1,8 @@
+// app/page.tsx
 import Link from 'next/link';
 import { Sparkles, BrainCircuit, Rocket, Zap, ShieldCheck, Cpu } from 'lucide-react';
+import { AgentPlayground } from './AgentPlayground'; // Import from root
+import { TechStack } from './TechStack'; // Import from root
 
 const solutions = [
   {
@@ -23,7 +26,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative pt-20 pb-32 px-8 flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative pt-20 pb-16 px-8 flex flex-col items-center justify-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-purple-600/20 blur-[120px] rounded-full -z-10" />
         
         <div className="text-center max-w-4xl">
@@ -49,21 +52,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* --- ADDED COMPONENT START --- */}
+      <AgentPlayground />
+      {/* --- ADDED COMPONENT END --- */}
+
       {/* SOLUTIONS GRID */}
-      
       <section id="solutions" className="py-24 px-8 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold mb-12 text-center">Core Capabilities</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {solutions.map((item, idx) => (
-            <div key={idx} className="group p-8 rounded-3xl bg-slate-900/40 border border-slate-800 hover:border-purple-500/50 transition-all">
-              <div className="mb-4 p-3 bg-slate-950 rounded-2xl w-fit border border-slate-800 group-hover:scale-110 transition-transform">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-              <p className="text-slate-400 leading-relaxed text-sm">{item.desc}</p>
+        {solutions.map((item, idx) => (
+          <div key={idx} className="relative overflow-hidden group p-8 rounded-3xl bg-slate-900/40 border border-slate-800 ...">
+            {/* The Scan Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent h-full w-full animate-scan pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+            
+            <div className="relative z-10">
+                {/* ... existing card content (icon, title, desc) ... */}
             </div>
-          ))}
+          </div>
+        ))}
         </div>
       </section>
+
+      {/* --- ADDED COMPONENT START --- */}
+      <TechStack />
+      {/* --- ADDED COMPONENT END --- */}
 
       {/* STATS STRIP */}
       <section className="py-12 border-y border-slate-900 bg-slate-950/50 backdrop-blur-sm">
