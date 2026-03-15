@@ -57,21 +57,41 @@ export default function HomePage() {
       {/* --- ADDED COMPONENT END --- */}
 
       {/* SOLUTIONS GRID */}
-      <section id="solutions" className="py-24 px-8 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center">Core Capabilities</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {solutions.map((item, idx) => (
-          <div key={idx} className="relative overflow-hidden group p-8 rounded-3xl bg-slate-900/40 border border-slate-800 ...">
-            {/* The Scan Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent h-full w-full animate-scan pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
-            
-            <div className="relative z-10">
-                {/* ... existing card content (icon, title, desc) ... */}
-            </div>
+    
+
+{/* SOLUTIONS GRID */}
+<section id="solutions" className="py-24 px-8 max-w-7xl mx-auto scroll-mt-20">
+  <div className="text-center mb-16">
+    <h2 className="text-4xl font-bold text-white mb-4">Core Capabilities</h2>
+    <p className="text-slate-400 max-w-2xl mx-auto">
+      Proprietary AI infrastructure designed for high-stakes enterprise automation.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {solutions.map((item, idx) => (
+      <div key={idx} className="relative overflow-hidden group p-8 rounded-3xl bg-slate-900/40 border border-slate-800 transition-all hover:border-purple-500/50">
+        
+        {/* The Scan Overlay (Logic fixed to appear on hover) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/10 to-transparent h-full w-full animate-scan pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+        
+        <div className="relative z-10">
+          <div className="mb-6 p-4 bg-slate-950 rounded-2xl w-fit border border-slate-800 group-hover:scale-110 transition-transform duration-500">
+            {item.icon}
           </div>
-        ))}
+          <h3 className="text-2xl font-bold mb-4 text-white">{item.title}</h3>
+          <p className="text-slate-400 leading-relaxed">
+            {item.desc}
+          </p>
+          
+          <div className="mt-8 flex items-center gap-2 text-sm font-bold text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+            Learn Technical Specs <Rocket size={16} />
+          </div>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* --- ADDED COMPONENT START --- */}
       <TechStack />
