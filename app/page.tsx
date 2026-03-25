@@ -35,10 +35,10 @@ export default function HomePage() {
             <span>Deployment Ready for 2026</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-6 tracking-tighter leading-[1.1]">
-            Automate <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">Complexity.</span>
-          </h1>
+          <h1 className="text-5xl md:text-8xl font-extrabold text-white mb-6 tracking-tighter leading-[1.1] px-4">
+          Automate <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">Complexity.</span>
+        </h1>
           
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Ardentinfo AI Lab engineers custom intelligence layers for modern enterprises. From LLM fine-tuning to autonomous agents.
@@ -99,19 +99,19 @@ export default function HomePage() {
 
       {/* STATS STRIP */}
       <section className="py-12 border-y border-slate-900 bg-slate-950/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-8 flex flex-wrap justify-between gap-8">
-          {[
-            { label: "Efficiency Gain", val: "40%+" },
-            { label: "Data Security", val: "Military Grade" },
-            { label: "Models Supported", val: "GPT-4 / Claude / Llama" }
-          ].map((stat, i) => (
-            <div key={i} className="flex flex-col">
-              <span className="text-xs uppercase tracking-widest text-slate-500 font-semibold">{stat.label}</span>
-              <span className="text-2xl font-bold text-white">{stat.val}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+    {[
+      { label: "Efficiency Gain", val: "40%+" },
+      { label: "Data Security", val: "Military Grade" },
+      { label: "Models Supported", val: "GPT-4 / Claude / Llama" }
+    ].map((stat, i) => (
+      <div key={i} className="flex flex-col">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">{stat.label}</span>
+        <span className="text-2xl font-bold text-white">{stat.val}</span>
+      </div>
+    ))}
+  </div>
+</section>
     </>
   );
 }
