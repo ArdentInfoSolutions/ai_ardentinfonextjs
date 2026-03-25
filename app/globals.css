@@ -33,8 +33,3 @@
 .animate-scan {
   animation: scan 3s linear infinite;
 }
-
-/* This forces the mobile menu to always be on top of everything else */
-.fixed.inset-0.z-\[110\] {
-  background-attachment: fixed;
-}
