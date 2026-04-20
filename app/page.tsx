@@ -16,7 +16,7 @@ const solutions = [
   },
   {
     title: "AI Agents",
-    desc: "Autonomous workflows that execute tasks across 5,000+ app integrations.",
+    desc: "Autonomous workflows that execute complex tasks across your entire enterprise software ecosystem.",
     icon: <Cpu className="text-indigo-400" size={24} />
   },
   {
