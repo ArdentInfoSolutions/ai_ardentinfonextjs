@@ -35,8 +35,9 @@ export function Header() {
             <Link href="#solutions" className="hover:text-purple-400 transition">Solutions</Link>
             <Link href="/consultation" className="hover:text-purple-400 transition">Consultation</Link>
             <ThemeToggle />
-            <Link href="/contact" className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-purple-500 hover:text-white transition-all items-center gap-2">
-              Get Started <ArrowRight size={16} />
+            
+            <Link href="/contact" className="hidden md:flex items-center gap-2 bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-purple-500 hover:text-white transition-all whitespace-nowrap shrink-0 shadow-lg shadow-purple-500/10">
+              Get Started <ArrowRight size={16} className="shrink-0" />
             </Link>
           </div>
 
@@ -78,13 +79,8 @@ export function Header() {
 
         <div className="w-24 h-px bg-slate-800 my-6" />
 
-        <Link 
-          href="/contact" 
-          onClick={() => setIsOpen(false)}
-          className="bg-white text-black px-12 py-5 rounded-2xl font-black text-xl flex items-center gap-3 active:scale-95 transition-all"
-        >
-          Get Started <ArrowRight className="text-purple-600" size={20} />
-        </Link>
+        <Link href="/contact" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-3 bg-white text-black px-10 py-5 rounded-2xl font-black text-xl whitespace-nowrap shadow-2xl active:scale-95 transition-all">Get Started <ArrowRight className="text-purple-600 shrink-0" size={24} /></Link>
+
 
         <div className="mt-auto pb-8">
           <span className="text-slate-700 text-[9px] uppercase tracking-[0.4em] font-bold">
